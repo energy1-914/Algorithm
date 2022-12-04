@@ -1,4 +1,6 @@
 //학급회장 선출 - 최다 득표 알아내기
+
+//answer1
 function solution(s) {
   let answer = '';
   s = s.split('');
@@ -16,3 +18,20 @@ function solution(s) {
     return answer;
   }
   
+//answer2
+function solution(s) {
+  let answer;
+  let sH = new Map();
+  for (let x of s) {
+    sH.set(x, (sH.get(x) || 0) + 1);
+  }
+
+  let maxValue = 0;
+  for (let [key, value] of sH) {
+    if (value > maxValue) {
+      maxValue = value;
+      answer = key;
+    }
+  }
+  return answer;
+}
