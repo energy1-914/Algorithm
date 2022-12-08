@@ -2,9 +2,17 @@
 
 function solution (s) {
   let array = s.split('');
-  let newArr = [];
-
-  for (let i = 0; i < array.length; i++) {
-    
+  let newArr = array;
+  for (let i = 0; i < array.length; i++) {  
+    for (x of array) {
+      let idx = array.indexOf(x);
+      if (x === array[i]) newArr.splice(idx, 1);
+    }
   }
+  console.log(newArr); // [ 'a', 't', 'c' ]
+  newArr[0]
 }
+
+ solution('statistics') // a 3
+// solution('aabb') // -1
+// solution('stringshowtime') // r 3
