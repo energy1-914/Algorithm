@@ -15,9 +15,26 @@ function solution(nums) {
       height = 0;
     }
   }
-  
+
   return Math.max(...arr);
 }
-                      // 0   1  2  3  4  5   6   7  8
-console.log(solution([8, 12, 2, 3, 7, 6, 12, 20, 3])) // 14
-console.log(solution([5, 2, 4, 7, 7, 3, 9, 10, 11])) // 8
+
+console.log(solution2([8, 12, 2, 3, 7, 6, 12, 20, 3])) // 14
+console.log(solution2([5, 2, 4, 7, 7, 3, 9, 10, 11])) // 8
+
+//sol2
+function solution2(nums) {
+  let height = 0;
+  let diff = 0;
+
+  for (let i = 0; i < nums.length - 1; i++) {
+    if (nums[i] < nums[i+1]) diff += nums[i+1] - nums[i];
+    else {
+      if (height < diff) height = diff;
+      diff = 0;
+    }
+  }
+  if (height < diff) height = diff;
+
+  return height;
+}
