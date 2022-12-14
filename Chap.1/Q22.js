@@ -4,7 +4,7 @@ function solution(nums) {
   let arr = [...nums];
   let cumulativeScore = 1;
   let answer = 0;
-  
+
   for (let i = 0; i < nums.length - 1; i++) {
     if (nums[i] === 1 && nums[i+1] === 1) {
       cumulativeScore++;
@@ -17,9 +17,26 @@ function solution(nums) {
 
   return answer;
 }                     
-
-console.log(solution([1, 0, 1, 1, 1, 0, 0, 1, 1, 0])) // 10
-console.log(solution([1, 1, 1, 1, 1, 0, 1])) // 16
-console.log(solution([0, 1, 0, 1, 0, 1, 1, 1])) // 8
+console.log(solution2([1, 0, 1, 1, 1, 0, 0, 1, 1, 0])) // 10
+console.log(solution2([1, 1, 1, 1, 1, 0, 1])) // 16
+console.log(solution2([0, 1, 0, 1, 0, 1, 1, 1])) // 8
 console.log(solution([0, 0, 0, 0, 0])) // 0
 console.log(solution([1, 0, 0, 0, 1])) // 2
+
+
+//sol 2
+function solution2(nums) {
+  let answer = 0;
+  let score = 0;
+
+  for (let x of nums) {
+    if (x === 1) {
+      score++; 1 
+      answer = answer + score;  
+    }                          
+    else score = 0;
+  }
+
+  return answer;
+}
+
