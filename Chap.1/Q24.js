@@ -8,7 +8,6 @@ function solution(nums) {
   while (nums[i] < nums[i+1] && i < length - 1) i++;
   if (i === 0 || i === length - 1) return 'NO'; 
   while (nums[i] > nums[i+1] && i < length - 1) i++;
-  if (nums[i] === nums[i+1] || nums[i] < nums[i+1]) return 'NO';
   if (i !== length - 1) return 'NO';
   return 'YES';
 }
