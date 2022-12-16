@@ -28,4 +28,5 @@ function solution(nums) {
   return answer;
 }
 
+console.log(solution([1, 3, 5, 2, 1, 2, 3, 4, 2, 1])) // 10
 console.log(solution([1, 3, 2, 5, 7, 4, 2, 5, 3, 1])) // 7
