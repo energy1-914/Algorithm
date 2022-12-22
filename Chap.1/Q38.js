@@ -7,8 +7,7 @@ function solution(s) {
     if (string !== ')') stack.push(string);
     
     else {
-      while (stack[stack.length - 1] !== '(') stack.pop();
-      stack.pop(); 
+      while (stack.pop() !== '(');
     }
   }
   
@@ -19,3 +18,18 @@ console.log(solution('(A(BC)D)EF(G(H)(IJ)K)LM(N)')) // 'EFLM'
 console.log(solution('((AF)B)(D)E(F)')) // 'E'
 console.log(solution('(Aab)(EsG)FFD')) // 'FFD'
 console.log(solution('(YYYDD)sh(kkf(hfs))')) // 'sh'
+console.log(solution('(YYYDD)sh(kkf(hfs))()g')) // 'shg'
+
+
+function sol2(s) {
+  let stack = [];
+
+  for (let x of s) {
+    if ( x === ')') {
+      while (stack.pop() !== '(');
+    }
+    else stack.push(x);
+  }
+  return stack.join('')
+}
+console.log(sol2('(A(BC)D)EF(G(H)(IJ)K)LM(N)')) // 'EFLM'
