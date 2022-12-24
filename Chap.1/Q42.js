@@ -3,18 +3,21 @@
 // 카드가 일렬로 놓여진 줄의 양 끝에서 카드를 가져갈 수 있다. 가져간 카드에 적혀진 숫자의 총합이 현수가 얻는 점수.
 function solution(nums, k) {
   let sum = 0;
-  let answer;
-  // let lt =
+  let answer = 0;
+  let lt = k - 1;
+  let length = nums.length;
 
   for (let i = 0; i < k; i++) {
     sum += nums[i];
   }
 
-  for (let rt = nums.length - 1; rt > nums.length - k - 1; rt--) {
+  for (let rt = length - 1; rt > length - k - 1; rt--) {
     sum += (nums[rt] - nums[lt]);
     answer = Math.max(answer, sum);
     lt--;
   }
+
+  return answer;
 }
 
 console.log(solution([2, 3, 7, 1, 2, 1, 5], 4)) // 17
