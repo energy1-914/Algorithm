@@ -1,4 +1,4 @@
-// 삽입정렬
+// 삽입정렬***
 function solution(nums) {
 
   for (let i = 0; i < nums.length - 1; i++) {
@@ -8,6 +8,7 @@ function solution(nums) {
         [nums[key], nums[j]] = [nums[j], nums[key]];
         key--;
       }
+      else break;
     }
   }
   return nums;

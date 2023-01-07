@@ -23,3 +23,8 @@ function solution(nums) {
 
 console.log(solution([[1, 3], [4, 11], [7, 10]])) // 9
 console.log(solution([[5, 8], [1, 3], [6, 8], [9, 10]])) // 6
+console.log(solution([[1, 3], [2, 5], [3, 4], [7, 9], [6, 9]])); //7
+console.log(solution([[1, 3], [2, 5], [7, 10]]));//7
+console.log(solution([[1, 3], [3, 7], [2, 3], [2, 9], [10, 12]])); //10
+console.log(solution([[2, 3], [5, 5], [7, 7]])); //1
+console.log(solution([[5, 6], [1, 3], [7, 8], [9, 10]])); //5

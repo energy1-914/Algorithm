@@ -10,8 +10,7 @@ function solution(nums) {
       answer++;
       lt++;
       rt--;
-    }
-    else {
+    } else {
       answer++;
       rt--;
     }

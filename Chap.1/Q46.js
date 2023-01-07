@@ -6,7 +6,7 @@ function solution(n) {
   let sum = 0;
   let lt = 0;
   let answer = 0;
-console.log(arr)
+  
   for (let rt = 0; rt < baseNum; rt++) {
     sum += arr[rt];
 

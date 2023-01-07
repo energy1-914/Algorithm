@@ -1,8 +1,6 @@
 // 초코볼 
 function solution(nums, h) {
-  nums.sort((a,b) => a - b);
-  let length = nums.length;
-  let lt = nums[0], rt = nums[length-1];
+  let lt = 1, rt = Math.max(...nums);
   let answer;
 
   function count(midNumber) {
