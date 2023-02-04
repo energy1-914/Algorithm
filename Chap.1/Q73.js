@@ -17,3 +17,23 @@ function solution(m, nums) {
   return answer;
 }
 console.log(solution(259, [81, 58, 42, 33, 61]));
+
+
+
+function sol2(m, nums) {
+  let answer = Number.MIN_SAFE_INTEGER;
+  let n = nums.length;
+  function DFS(L, sum) {
+    if (sum > m) return;
+    if (L === n) {
+      answer = Math.max(answer, sum);
+    } else {
+      DFS(L + 1, sum + nums[L]);
+      DFS(L + 1, sum);
+    }
+  }
+  DFS(0, 0);
+  return answer;
+}
+
+console.log(sol2(259, [81, 58, 42, 33, 61]));
