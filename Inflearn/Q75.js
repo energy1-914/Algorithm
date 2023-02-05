@@ -1,14 +1,19 @@
-function solution(n) {
-  console.log(`
-  ${n} * 1 = ${n * 1}
-  ${n} * 2 = ${n * 2}
-  ${n} * 3 = ${n * 3}
-  ${n} * 4 = ${n * 4}
-  ${n} * 5 = ${n * 5}
-  ${n} * 6 = ${n * 6}
-  ${n} * 7 = ${n * 7}
-  ${n} * 8 = ${n * 8}
-  ${n} * 9 = ${n * 9}
-  `);
+// 동전교환
+function solution(nums, m) {
+  let answer = Number.MAX_SAFE_INTEGER;
+  let length = nums.length;
+  function DFS(L, sum) {
+    if (sum > m) return;
+    if (L >= answer) return;
+    if (sum === m) answer = Math.min(answer, L);
+    else {
+      for (let i = 0; i < length; i++) {
+        DFS(L + 1, sum + nums[i]);
+      }
+    }
+  }
+  DFS(0, 0);
+  return answer;
 }
-solution(3)
+
+console.log(solution([1, 2, 5], 15));
