@@ -38,3 +38,41 @@ for (let i = 1; i <= n; i++) {
   }
 }
 console.log(count);
+
+// // DFS 풀이
+let input1 = require("fs")
+  .readFileSync("example.txt")
+  .toString()
+  .trim()
+  .split("\n");
+let [n1, m1] = input1
+  .shift()
+  .split(" ")
+  .map(x => +x);
+let graph1 = input.map(x => x.split(" ").map(x => +x));
+let check1 = Array(n1 + 1).fill(0);
+let count1 = 0;
+let relation1 = Array.from(Array(n1 + 1), () => []);
+for (let x of graph1) {
+  relation1[x[0]].push(x[1]);
+  relation1[x[1]].push(x[0]);
+}
+function DFS(s) {
+  if (check1.reduce((a, b) => a + b) === n) return;
+  if (check1[s] === 0) {
+    check1[s] = 1;
+    for (let i = 0; i < relation1[s].length; i++) {
+      if (check1[relation1[s][i]] === 0) {
+        DFS(relation1[s][i]);
+      }
+    }
+  }
+}
+for (let i = 1; i <= n; i++) {
+  if (check1[i] === 0) {
+    DFS(i);
+    count1++;
+  }
+}
+
+console.log(count1);
